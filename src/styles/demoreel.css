@@ -1,0 +1,23 @@
+.demo-reel {
+  width: 100%;
+}
+
+.video-placeholder {
+  background: #ddd;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #666;
+}
+
+.video-placeholder p {
+  margin: 0.5rem 0;
+}
+
+.video-note {
+  font-size: 0.875rem;
+  color: #999;
+}
