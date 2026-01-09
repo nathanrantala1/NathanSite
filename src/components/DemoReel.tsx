@@ -5,7 +5,6 @@ export default function DemoReel() {
     <div className="demo-reel">
       <div className="video-placeholder">
         <p>Placeholder</p>
-        <p className="video-note">16:9 aspect ratio</p>
       </div>
     </div>
   );
