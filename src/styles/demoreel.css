@@ -3,14 +3,15 @@
 }
 
 .video-placeholder {
-  background: #ddd;
+  background: rgba(255, 255, 255, 0.05);
   aspect-ratio: 16 / 9;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 8px;
   color: #666;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .video-placeholder p {
@@ -19,5 +20,5 @@
 
 .video-note {
   font-size: 0.875rem;
-  color: #999;
+  color: #666;
 }
