@@ -1,5 +1,6 @@
 .bio {
   width: 100%;
+  padding: 0 2rem;
 }
 
 .bio-content {
@@ -16,7 +17,7 @@
 }
 
 .bio-text p {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   line-height: 1.8;
   color: rgb(189, 189, 189);
   margin: 0;
@@ -26,16 +27,12 @@
   position: relative;
 }
 
-.photo-placeholder {
-  background: #ddd;
-  aspect-ratio: 3 / 4;
-  max-width: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.headshot {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 4px;
-  color: #666;
-  font-size: 1rem;
   position: sticky;
   top: 120px;
 }
@@ -51,7 +48,7 @@
     line-height: 1.7;
   }
 
-  .photo-placeholder {
+  .headshot {
     max-width: 350px;
     margin: 0 auto;
     position: relative;
@@ -65,7 +62,7 @@
     line-height: 1.6;
   }
 
-  .photo-placeholder {
+  .headshot {
     max-width: 280px;
   }
 }

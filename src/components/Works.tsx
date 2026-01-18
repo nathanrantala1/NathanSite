@@ -1,15 +1,48 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import '../styles/works.css';
 
+interface Work {
+  id: number;
+  title: string;
+  embedUrl: string;
+}
+
+function parseVideoUrl(url: string): string {
+  // YouTube: youtube.com/watch?v=ID, youtu.be/ID
+  const youtubeMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
+  if (youtubeMatch) {
+    return `https://www.youtube.com/embed/${youtubeMatch[1]}`;
+  }
+
+  // Vimeo: vimeo.com/ID
+  const vimeoMatch = url.match(/vimeo\.com\/(\d+)/);
+  if (vimeoMatch) {
+    return `https://player.vimeo.com/video/${vimeoMatch[1]}`;
+  }
+
+  return url;
+}
+
 export default function Works() {
-  const works = [
-    { id: 1, title: 'Project One' },
-    { id: 2, title: 'Project Two' },
-    { id: 3, title: 'Project Three' },
-    { id: 4, title: 'Project Four' },
-    { id: 5, title: 'Project Five' },
-    { id: 6, title: 'Project Six' },
-  ];
+  const [works, setWorks] = useState<Work[]>([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}/works.txt`)
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.trim().split('\n').filter((line) => line.trim());
+        const parsed = lines.map((line, index) => {
+          const [title, url] = line.split('|').map((s) => s.trim());
+          return {
+            id: index + 1,
+            title: title || '',
+            embedUrl: parseVideoUrl(url || ''),
+          };
+        });
+        setWorks(parsed);
+      });
+  }, []);
 
   return (
     <div className="works-grid">
@@ -23,9 +56,16 @@ export default function Works() {
           viewport={{ margin: '-50px' }}
           transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
         >
-          <div className="work-placeholder">
-            <p>{work.title}</p>
+          <div className="work-video">
+            <iframe
+              src={work.embedUrl}
+              title={work.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
+          <p className="work-caption">{work.title}</p>
         </motion.div>
       ))}
     </div>

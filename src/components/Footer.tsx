@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <p>&copy; 2024 NATHAN RANTALA. All rights reserved.</p>
+        <p>NATHAN RANTALA</p>
         <button onClick={scrollToTop} className="back-to-top">
           Back to top ↑
         </button>

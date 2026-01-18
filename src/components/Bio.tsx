@@ -1,4 +1,5 @@
-import '../styles/bio.css';
+import "../styles/bio.css";
+import headshot from "../assets/images/headshot.jpeg";
 
 export default function Bio() {
   return (
@@ -6,29 +7,24 @@ export default function Bio() {
       <div className="bio-content">
         <div className="bio-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur.
+            Nathan Rantala is a sound designer, audio engineer, and music
+            producer with a degree in Music Production & Engineering and a minor
+            in Audio Post Production from Berklee College of Music. He
+            specializes in editing, designing, and mixing audio that enhances
+            emotion and storytelling across visual media.
           </p>
           <p>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-            deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
-            error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-            ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-            explicabo.
-          </p>
-          <p>
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
-            quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
-            porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
-            velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
-            aliquam quaerat voluptatem.
+            Alongside his post-production work, he enjoys writing and producing
+            original music under his artist project All I Do Is Daydream, which
+            influences his creative sensibility. Outside of audio, Nathan is
+            also a magician and runs his own YouTube channel A Million Card
+            Tricks, where he shares magic performances and tutorials with over
+            half a million subscribers. His goal is to collaborate closely with
+            directors, editors, and artists to help bring their ideas to life.
           </p>
         </div>
         <div className="bio-photo">
-          <div className="photo-placeholder">Headshot</div>
+          <img src={headshot} alt="Nathan Rantala" className="headshot" />
         </div>
       </div>
     </div>
