@@ -28,8 +28,11 @@ export default function Works() {
   const [works, setWorks] = useState<Work[]>([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}/works.txt`)
-      .then((res) => res.text())
+    fetch(`${import.meta.env.BASE_URL}works.txt`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.text();
+      })
       .then((text) => {
         const lines = text.trim().split('\n').filter((line) => line.trim());
         const parsed = lines.map((line, index) => {
@@ -41,7 +44,8 @@ export default function Works() {
           };
         });
         setWorks(parsed);
-      });
+      })
+      .catch((err) => console.error('Failed to load works:', err));
   }, []);
 
   return (

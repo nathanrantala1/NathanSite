@@ -57,6 +57,18 @@
   transform: translateY(-2px);
 }
 
+.submit-button.submitted {
+  background: #2a5a2a;
+  cursor: default;
+  pointer-events: none;
+}
+
+.submit-button.error {
+  background: #8b2020;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
 @media (max-width: 640px) {
   .contact-form {
     max-width: 100%;
