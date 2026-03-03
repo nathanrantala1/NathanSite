@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import "../styles/hero.css";
+import SoundWave from './SoundWave';
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -15,6 +16,7 @@ export default function Hero() {
 
   return (
     <section className="hero">
+      <SoundWave />
       <div className="hero-content">
         <motion.p
           className="hero-label"

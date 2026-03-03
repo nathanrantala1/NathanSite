@@ -12,6 +12,8 @@
   text-align: center;
   max-width: 900px;
   padding: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-label {
@@ -39,6 +41,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  z-index: 1;
 }
 
 .hero-scroll-line {
