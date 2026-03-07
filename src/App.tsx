@@ -5,6 +5,7 @@ import Section from './components/Section';
 import DemoReel from './components/DemoReel';
 import Bio from './components/Bio';
 import Works from './components/Works';
+import Credits from './components/Credits';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -21,6 +22,9 @@ function App() {
       </Section>
       <Section id="works" title="Selected Works">
         <Works />
+      </Section>
+      <Section id="credits" title="Credits">
+        <Credits />
       </Section>
       <Section id="contact" title="Contact">
         <Contact />
